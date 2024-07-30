@@ -14,6 +14,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1573276609, guid: 32e4d1994d09a7a418bfa10865d47426,
         type: 3}
+    - target: {fileID: 3496560919790195963, guid: f17628ca98f1abd489720b6e250465c4,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1573276609, guid: 32e4d1994d09a7a418bfa10865d47426,
+        type: 3}
     - target: {fileID: 4522563606367151800, guid: f17628ca98f1abd489720b6e250465c4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -67,7 +73,7 @@ PrefabInstance:
     - target: {fileID: 4764530813150996049, guid: f17628ca98f1abd489720b6e250465c4,
         type: 3}
       propertyPath: m_Name
-      value: Tree 4
+      value: Grass
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

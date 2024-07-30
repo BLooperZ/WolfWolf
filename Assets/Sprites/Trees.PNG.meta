@@ -123,7 +123,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Trees_0
+      name: NutTree
       rect:
         serializedVersion: 2
         x: 48
@@ -144,7 +144,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Trees_1
+      name: ChalkRock
       rect:
         serializedVersion: 2
         x: 775
@@ -165,7 +165,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Trees_2
+      name: Pine
       rect:
         serializedVersion: 2
         x: 1183
@@ -186,7 +186,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Trees_3
+      name: Rock
       rect:
         serializedVersion: 2
         x: 629
@@ -207,7 +207,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Trees_5
+      name: Bush
       rect:
         serializedVersion: 2
         x: 92
@@ -228,7 +228,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Trees_6
+      name: Grass
       rect:
         serializedVersion: 2
         x: 428
@@ -249,7 +249,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Trees_7
+      name: Oak
       rect:
         serializedVersion: 2
         x: 874
@@ -257,7 +257,7 @@ TextureImporter:
         width: 640
         height: 745
       alignment: 9
-      pivot: {x: 0.3485628, y: 0.039750844}
+      pivot: {x: 0.3485628, y: 0.03975084}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -270,15 +270,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Trees_8
+      name: Log
       rect:
         serializedVersion: 2
-        x: 549
+        x: 546
         y: 80
         width: 886
         height: 299
       alignment: 9
-      pivot: {x: 0.5729268, y: 0.12605704}
+      pivot: {x: 0.5729268, y: 0.126057}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -301,15 +301,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Trees_0: -497905150
-      Trees_1: -1411163556
-      Trees_2: 1383860777
-      Trees_3: -1688705659
+      Bush: -405003124
+      ChalkRock: -1411163556
+      Grass: 1573276609
+      Log: -1565712546
+      NutTree: -497905150
+      Oak: -621526483
+      Pine: 1383860777
+      Rock: -1688705659
       Trees_4: -285243416
-      Trees_5: -405003124
-      Trees_6: 1573276609
-      Trees_7: -621526483
-      Trees_8: -1565712546
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
