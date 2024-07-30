@@ -12,12 +12,13 @@ GameObject:
   - component: {fileID: 1202437247210789409}
   - component: {fileID: 1796473727503079860}
   - component: {fileID: 2825717825291227697}
+  - component: {fileID: 3394207083586780941}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6336250609636961076
 Transform:
@@ -101,12 +102,28 @@ CapsuleCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!208 &3394207083586780941
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3282780247187570605}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 1, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1001 &5585261844971226509
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -201,6 +218,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8316598135255218478, guid: 519c740a8a3fb5f4c9c068b8690eb762,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8392257601341313615, guid: 519c740a8a3fb5f4c9c068b8690eb762,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -218,7 +240,8 @@ PrefabInstance:
       objectReference: {fileID: -405003124, guid: 32e4d1994d09a7a418bfa10865d47426,
         type: 3}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 7794197936671537406, guid: 519c740a8a3fb5f4c9c068b8690eb762, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 8305070564919354165, guid: 519c740a8a3fb5f4c9c068b8690eb762,
         type: 3}
