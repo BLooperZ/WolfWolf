@@ -123,15 +123,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Decor_0
+      name: Mushroom
       rect:
         serializedVersion: 2
         x: 281
         y: 1410
         width: 374
         height: 506
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.47745535, y: 0.1056369}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -144,15 +144,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Decor_1
+      name: Mushrooms
       rect:
         serializedVersion: 2
         x: 743
         y: 1570
         width: 326
         height: 279
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.431029, y: 0.1272751}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -165,15 +165,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Decor_2
+      name: Reed
       rect:
         serializedVersion: 2
         x: 1116
         y: 1567
         width: 293
         height: 280
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5479603, y: 0.2691341}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -186,15 +186,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Decor_3
+      name: flowers
       rect:
         serializedVersion: 2
         x: 495
         y: 877
         width: 437
         height: 499
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.4935684, y: 0.1113696}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -207,7 +207,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Decor_4
+      name: Rock
       rect:
         serializedVersion: 2
         x: 1093
@@ -215,7 +215,7 @@ TextureImporter:
         width: 374
         height: 198
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -228,15 +228,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Decor_5
+      name: Daisy
       rect:
         serializedVersion: 2
         x: 233
         y: 822
         width: 223
         height: 202
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5126032, y: 0.2634704}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -249,15 +249,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Decor_6
+      name: Purple flower
       rect:
         serializedVersion: 2
-        x: 36
+        x: 39
         y: 528
         width: 225
         height: 204
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.4999998, y: 0.1831264}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -270,15 +270,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Decor_7
+      name: Orange flower
       rect:
         serializedVersion: 2
         x: 356
         y: 556
         width: 263
         height: 204
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.4999999, y: 0.2106808}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -301,14 +301,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Decor_0: -1274991658
-      Decor_1: -359008624
-      Decor_2: -966475057
-      Decor_3: -1224229585
-      Decor_4: -1970609862
-      Decor_5: -833699698
-      Decor_6: 690490232
-      Decor_7: -1649007194
+      Daisy: -833699698
+      Mushroom: -1274991658
+      Mushrooms: -359008624
+      Orange flower: -1649007194
+      Purple flower: 690490232
+      Reed: -966475057
+      Rock: -1970609862
+      flowers: -1224229585
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
