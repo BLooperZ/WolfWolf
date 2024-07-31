@@ -12,17 +12,38 @@ public class Sheep : GAgent
     protected override void Start()
     {
         base.Start();
-        SubGoal s1 = new SubGoal("isThirsty", 0, false);
-        goals.Add(s1, 3);
-        SubGoal s2 = new SubGoal("isHungry", 0, false);
-        goals.Add(s2, 3);
+
+        beliefs.ModifyState("isHungry", 1);
+        beliefs.ModifyState("isThirsty", 1);
+
+        SubGoal s1 = new SubGoal("eatenGrass", 1, false);
+        goals.Add(s1, 1);
+        SubGoal s2 = new SubGoal("drankWater", 1, false);
+        goals.Add(s2, 1);
+        SubGoal s3 = new SubGoal("safe", 1, false);
+        goals.Add(s3, 3);
 
         agent = this.GetComponent<NavMeshAgent>();
+
+        Invoke("GetThirsty", Random.Range(10.0f, 20.0f));
+        Invoke("GetHungry", Random.Range(10.0f, 20.0f));
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        agent.SetDestination(destination.transform.position);
+    void GetThirsty() {
+
+        beliefs.ModifyState("isThirsty", 1);
+        //call the get tired method over and over at random times to make the sheep
+        //get tired again
+        Invoke("GetThirsty", Random.Range(0.0f, 20.0f));
+    }
+
+    void GetHungry() {
+        Debug.Log("Sheep is hungry");
+
+        beliefs.ModifyState("isHungry", 1);
+        beliefs.RemoveState("eatenGrass");
+        //call the get tired method over and over at random times to make the sheep
+        //get tired again
+        Invoke("isHungry", Random.Range(0.0f, 20.0f));
     }
 }

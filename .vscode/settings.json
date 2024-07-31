@@ -51,5 +51,7 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "WolfWolf.sln"
+    "dotnet.defaultSolution": "WolfWolf.sln",
+    "csharp.format.enable": false,
+    "omnisharp.useEditorFormattingSettings": false
 }
