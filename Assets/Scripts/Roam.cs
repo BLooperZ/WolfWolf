@@ -64,6 +64,7 @@ public class Roam : GAction {
                 beliefs.ModifyState("danger", 1);
                 beliefs.RemoveState("foundGrass");
                 beliefs.RemoveState("foundPond");
+                beliefs.RemoveState("safe");
                 Debug.Log("Found Wolf");
             }
         }

@@ -59,6 +59,7 @@ public class Flee : GAction {
     public override bool PostPerform() {
         Destroy(target);
         beliefs.RemoveState("danger");
+        beliefs.ModifyState("safe", 1);
 
         // check for nearby Grass or Pond
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, 30f);
@@ -72,6 +73,7 @@ public class Flee : GAction {
                 beliefs.ModifyState("danger", 1);
                 beliefs.RemoveState("foundGrass");
                 beliefs.RemoveState("foundPond");
+                beliefs.RemoveState("safe");
                 Debug.Log("Found Wolf");
             }
         }

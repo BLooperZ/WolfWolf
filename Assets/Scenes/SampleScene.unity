@@ -1555,6 +1555,8 @@ MonoBehaviour:
   preConditions:
   - key: foundGrass
     value: 1
+  - key: isHungry
+    value: 1
   afterEffects:
   - key: eatenGrass
     value: 1
@@ -2801,7 +2803,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 3ffcc5d4ffcbf4c458f4cc459c3cb013,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -6.3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3ffcc5d4ffcbf4c458f4cc459c3cb013,
         type: 3}
