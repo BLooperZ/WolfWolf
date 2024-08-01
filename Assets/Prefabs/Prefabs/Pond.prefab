@@ -29,8 +29,8 @@ Transform:
   m_GameObject: {fileID: 2367524137696457795}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.3, y: 10.9, z: 0.5}
-  m_LocalScale: {x: 11.927, y: 12.575, z: 1}
+  m_LocalPosition: {x: 0, y: 1.85, z: 0}
+  m_LocalScale: {x: 1.911399, y: 2.550778, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4589210625233579912}
@@ -134,8 +134,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4589210625233579912}
   m_Layer: 0
-  m_Name: NutTree
-  m_TagString: Untagged
+  m_Name: Pond
+  m_TagString: Pond
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -149,8 +149,8 @@ Transform:
   m_GameObject: {fileID: 4858392905181949793}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.96, y: -1, z: -4.01}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.96, y: -2.6379, z: -4.01}
+  m_LocalScale: {x: 2.425966, y: 2.425966, z: 2.425966}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4073196631811006194}
@@ -182,13 +182,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7627829743631480647}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.21643952, y: 0, z: 0, w: 0.97629607}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: -1, z: 0}
-  m_LocalScale: {x: 3.2, y: 3.2, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4589210625233579912}
-  m_LocalEulerAnglesHint: {x: -25, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!212 &3599852460039658955
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -230,7 +230,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -497905150, guid: 32e4d1994d09a7a418bfa10865d47426, type: 3}
+  m_Sprite: {fileID: -818017785, guid: 42ca93f4f1e7b4d4fa92286b4ccfa0db, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
