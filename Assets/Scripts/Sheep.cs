@@ -25,8 +25,8 @@ public class Sheep : GAgent
 
         agent = this.GetComponent<NavMeshAgent>();
 
-        Invoke("GetThirsty", Random.Range(10.0f, 20.0f));
-        Invoke("GetHungry", Random.Range(10.0f, 20.0f));
+        Invoke("GetThirsty", Random.Range(10.0f, 5.0f));
+        // Invoke("GetHungry", Random.Range(10.0f, 5.0f));
     }
 
     void GetThirsty() {
@@ -34,7 +34,7 @@ public class Sheep : GAgent
         beliefs.ModifyState("isThirsty", 1);
         //call the get tired method over and over at random times to make the sheep
         //get tired again
-        Invoke("GetThirsty", Random.Range(0.0f, 20.0f));
+        Invoke("GetThirsty", Random.Range(0.0f, 5.0f));
     }
 
     void GetHungry() {
@@ -44,6 +44,6 @@ public class Sheep : GAgent
         beliefs.RemoveState("eatenGrass");
         //call the get tired method over and over at random times to make the sheep
         //get tired again
-        Invoke("isHungry", Random.Range(0.0f, 20.0f));
+        // Invoke("GetHungry", Random.Range(0.0f, 5.0f));
     }
 }

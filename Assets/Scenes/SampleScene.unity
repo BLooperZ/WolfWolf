@@ -1356,7 +1356,7 @@ Transform:
   m_GameObject: {fileID: 885805019}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -22.088917, y: 1.2, z: -5.9267387}
+  m_LocalPosition: {x: 9.6, y: 1.2, z: -5.9267387}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1395,9 +1395,10 @@ GameObject:
   - component: {fileID: 897930658}
   - component: {fileID: 897930657}
   - component: {fileID: 897930656}
+  - component: {fileID: 897930662}
+  - component: {fileID: 897930659}
   - component: {fileID: 897930661}
   - component: {fileID: 897930660}
-  - component: {fileID: 897930659}
   - component: {fileID: 897930655}
   - component: {fileID: 897930654}
   m_Layer: 0
@@ -1545,11 +1546,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b52200a57a01a94392564c81b42b568, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actionName: Action
+  actionName: Eat Grass
   cost: 1
   target: {fileID: 0}
-  targetTag: Grass
-  duration: 5
+  targetTag: 
+  duration: 1
   preConditions:
   - key: foundGrass
     value: 1
@@ -1570,11 +1571,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff8abacd6aab83c40b2b911a3983b8ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actionName: Action
+  actionName: Find Grass
   cost: 1
   target: {fileID: 0}
   targetTag: Grass
-  duration: 0
+  duration: 1
   preConditions:
   - key: isHungry
     value: 1
@@ -1583,6 +1584,19 @@ MonoBehaviour:
     value: 1
   agent: {fileID: 0}
   running: 0
+--- !u!114 &897930662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 897930653}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ce8d09e5c4f8684db3c65508231a11d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thisAgent: {fileID: 897930659}
 --- !u!1001 &962831338
 PrefabInstance:
   m_ObjectHideFlags: 0

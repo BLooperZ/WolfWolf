@@ -68,7 +68,7 @@ public class GPlanner {
         //if a plan wasn't found
         if (!success) {
 
-            Debug.Log("NO PLAN");
+            // Debug.Log("NO PLAN");
             return null;
         }
 
