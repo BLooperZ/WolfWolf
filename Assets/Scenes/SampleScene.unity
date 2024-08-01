@@ -1247,7 +1247,7 @@ GameObject:
   - component: {fileID: 885805020}
   m_Layer: 0
   m_Name: WolfAgent
-  m_TagString: Untagged
+  m_TagString: Wolf
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1397,8 +1397,9 @@ GameObject:
   - component: {fileID: 897930656}
   - component: {fileID: 897930662}
   - component: {fileID: 897930659}
-  - component: {fileID: 897930661}
+  - component: {fileID: 897930664}
   - component: {fileID: 897930660}
+  - component: {fileID: 897930663}
   - component: {fileID: 897930655}
   - component: {fileID: 897930654}
   m_Layer: 0
@@ -1559,31 +1560,6 @@ MonoBehaviour:
     value: 1
   agent: {fileID: 0}
   running: 0
---- !u!114 &897930661
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 897930653}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff8abacd6aab83c40b2b911a3983b8ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  actionName: Find Grass
-  cost: 1
-  target: {fileID: 0}
-  targetTag: Grass
-  duration: 1
-  preConditions:
-  - key: isHungry
-    value: 1
-  afterEffects:
-  - key: foundGrass
-    value: 1
-  agent: {fileID: 0}
-  running: 0
 --- !u!114 &897930662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1597,6 +1573,56 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisAgent: {fileID: 897930659}
+--- !u!114 &897930663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 897930653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddc1f208d825b1c449fff9913842e571, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionName: Flee
+  cost: 1
+  target: {fileID: 0}
+  targetTag: 
+  duration: 0
+  preConditions:
+  - key: danger
+    value: 1
+  afterEffects:
+  - key: safe
+    value: 1
+  agent: {fileID: 0}
+  running: 0
+--- !u!114 &897930664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 897930653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51c8650837e550d4ea958ec0c6e3246b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionName: Roam
+  cost: 1
+  target: {fileID: 0}
+  targetTag: 
+  duration: 0
+  preConditions: []
+  afterEffects:
+  - key: foundGrass
+    value: 1
+  - key: foundWater
+    value: 1
+  agent: {fileID: 0}
+  running: 0
 --- !u!1001 &962831338
 PrefabInstance:
   m_ObjectHideFlags: 0
