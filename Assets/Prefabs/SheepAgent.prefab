@@ -14,13 +14,14 @@ GameObject:
   - component: {fileID: 2435708301220413320}
   - component: {fileID: 942258042684009308}
   - component: {fileID: 6563800251753837400}
+  - component: {fileID: 8870634079111812747}
   - component: {fileID: 9223295232448236301}
   - component: {fileID: 8447564540855896125}
   - component: {fileID: 6362037981790567985}
   - component: {fileID: 7746819500314042663}
   m_Layer: 0
   m_Name: SheepAgent
-  m_TagString: Untagged
+  m_TagString: Sheep
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -119,6 +120,7 @@ MonoBehaviour:
   actions: []
   currentAction: {fileID: 0}
   destination: {fileID: 0}
+  captor: {fileID: 0}
 --- !u!114 &6563800251753837400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,6 +146,31 @@ MonoBehaviour:
     value: 1
   agent: {fileID: 0}
   running: 0
+--- !u!114 &8870634079111812747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4559472085877220549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28f0c3431181be243807a884e95c483e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionName: Action
+  cost: 1
+  target: {fileID: 0}
+  targetTag: 
+  duration: 20
+  preConditions:
+  - key: taken
+    value: 1
+  afterEffects:
+  - key: home
+    value: 1
+  agent: {fileID: 0}
+  running: 0
 --- !u!114 &9223295232448236301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,7 +187,7 @@ MonoBehaviour:
   cost: 1
   target: {fileID: 0}
   targetTag: 
-  duration: 1
+  duration: 3
   preConditions:
   - key: foundGrass
     value: 1
@@ -187,7 +214,7 @@ MonoBehaviour:
   cost: 1
   target: {fileID: 0}
   targetTag: 
-  duration: 0
+  duration: 2
   preConditions:
   - key: danger
     value: 1

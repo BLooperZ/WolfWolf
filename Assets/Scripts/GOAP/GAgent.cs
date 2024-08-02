@@ -58,6 +58,11 @@ public class GAgent : MonoBehaviour {
         invoked = false;
     }
 
+    public void AbortAction() {
+        currentAction.running = false;
+        invoked = false;
+    }
+
     void LateUpdate() {
 
         //if there's a current action and it is still running
@@ -66,7 +71,7 @@ public class GAgent : MonoBehaviour {
             // Find the distance to the target
             float distanceToTarget = Vector3.Distance(currentAction.target.transform.position, this.transform.position);
             // Check the agent has a goal and has reached that goal
-            if (currentAction.agent.hasPath && distanceToTarget < 2.0f) { // currentAction.agent.remainingDistance < 1.0f) 
+            if (currentAction.agent.hasPath && distanceToTarget < 11.0f) { // currentAction.agent.remainingDistance < 1.0f) 
 
                 if (!invoked) {
 

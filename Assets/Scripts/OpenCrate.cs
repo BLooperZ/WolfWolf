@@ -1,17 +1,26 @@
-﻿public class FindGrass : GAction {
+﻿using System.Collections;
+using UnityEngine;
+
+public class OpenCrate : GAction {
 
     public override bool PrePerform() {
-        target = GWorld.Instance.RemoveGrass();
-        if (target == null)
+        target = inventory.FindItemWithTag("Crate");
+        if (target == null) {
+            Debug.Log("No crate found");
             return false;
-        inventory.AddItem(target);
+        }
+        GWorld.Instance.RemoveCrate(target);
+        Invoke("Timeout", 10f);
         return true;
     }
 
     public override bool PostPerform() {
-
         // Add a new state "TreatingPatient"
-        beliefs.ModifyState("foundGrass", 1);
+        beliefs.ModifyState("foundCrate", -1);
+        beliefs.ModifyState("openCrate", 1);
+
+        inventory.RemoveItem(target);
+        Destroy(target);
         // Hide grass until grown again
         // // Give back the cubicle
         // GWorld.Instance.AddCubicle(target);

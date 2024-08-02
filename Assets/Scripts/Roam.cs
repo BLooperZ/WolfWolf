@@ -23,12 +23,14 @@ public class Roam : GAction {
         GameObject obj = new GameObject();
 
         // put it in a random position inside the navigation mesh
-        obj.transform.position = RandomNavmeshLocation(15f);
+        obj.transform.position = RandomNavmeshLocation(5f);
 
         target = obj;
 
         if (target == null)
             return false;
+
+        Invoke("Timeout", 10f);
         return true;
     }
 
@@ -36,18 +38,25 @@ public class Roam : GAction {
         Destroy(target);
 
         // check for nearby Grass or Pond
-        Collider[] hitColliders = Physics.OverlapSphere(transform.position, 30f);
+
+        GameObject grass = GWorld.Instance.GetGrassWithin(10f, this.transform.position);
+        if (grass != null) {
+            inventory.AddItem(grass);
+            beliefs.ModifyState("foundGrass", 1);
+            Debug.Log("Found Grass");
+        }
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, 10f);
         foreach (var hitCollider in hitColliders) {
             Debug.Log("Collider: " + hitCollider.gameObject.tag);
-            if (hitCollider.gameObject.tag == "Grass") {
-                // check if item already in inventory
-                if (beliefs.HasState("foundGrass") && inventory.HasItem(hitCollider.gameObject)) {
-                    continue;
-                }
-                inventory.AddItem(hitCollider.gameObject);
-                beliefs.ModifyState("foundGrass", 1);
-                Debug.Log("Found Grass");
-            }
+            // if (hitCollider.gameObject.tag == "Grass") {
+            //     // check if item already in inventory
+            //     if (beliefs.HasState("foundGrass") && inventory.HasItem(hitCollider.gameObject)) {
+            //         continue;
+            //     }
+            //     inventory.AddItem(hitCollider.gameObject);
+            //     beliefs.ModifyState("foundGrass", 1);
+            //     Debug.Log("Found Grass");
+            // }
             if (hitCollider.gameObject.tag == "Pond") {
                 if (beliefs.HasState("foundPond") && inventory.HasItem(hitCollider.gameObject)) {
                     continue;

@@ -11,8 +11,15 @@ GameObject:
   - component: {fileID: 1573743863875723453}
   - component: {fileID: 187518253924771959}
   - component: {fileID: 8003306856213198585}
-  - component: {fileID: 7122098565097344788}
+  - component: {fileID: 5668415806338062498}
+  - component: {fileID: 1797370782751235955}
+  - component: {fileID: 6224379881922963691}
+  - component: {fileID: 4815771575908632666}
+  - component: {fileID: 2883676816117523502}
+  - component: {fileID: 5885562165021137090}
+  - component: {fileID: 7456679293592645156}
   - component: {fileID: 8624094498691526323}
+  - component: {fileID: 4944211671870707317}
   - component: {fileID: 6619658311154712233}
   m_Layer: 0
   m_Name: WolfAgent
@@ -34,7 +41,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 8656942306496523354}
   - {fileID: 6640875141566311407}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -88,7 +94,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &7122098565097344788
+--- !u!114 &5668415806338062498
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -97,12 +103,154 @@ MonoBehaviour:
   m_GameObject: {fileID: 3728562720442375913}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c63262dbae21f214a9da859861b6b423, type: 3}
+  m_Script: {fileID: 11500000, guid: 8ce8d09e5c4f8684db3c65508231a11d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thisAgent: {fileID: 7456679293592645156}
+--- !u!114 &1797370782751235955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3728562720442375913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7abc3dde9b9f224da8acaa04e8ccda5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionName: Search
+  cost: 1
+  target: {fileID: 0}
+  targetTag: 
+  duration: 0
+  preConditions: []
+  afterEffects:
+  - key: foundSheep
+    value: 1
+  - key: foundCrate
+    value: 1
+  agent: {fileID: 0}
+  running: 0
+--- !u!114 &6224379881922963691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3728562720442375913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7393fc5bf784848459d0c00a85eb88c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionName: Action
+  cost: 1
+  target: {fileID: 0}
+  targetTag: 
+  duration: 1
+  preConditions:
+  - key: foundCrate
+    value: 1
+  afterEffects:
+  - key: openCrate
+    value: 1
+  agent: {fileID: 0}
+  running: 0
+--- !u!114 &4815771575908632666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3728562720442375913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aeae4c3461e33f444b29c815cb374474, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionName: Action
+  cost: 1
+  target: {fileID: 0}
+  targetTag: 
+  duration: 0
+  preConditions:
+  - key: openCrate
+    value: 1
+  - key: foundSheep
+    value: 1
+  afterEffects:
+  - key: lockSheep
+    value: 0
+  agent: {fileID: 0}
+  running: 0
+--- !u!114 &2883676816117523502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3728562720442375913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b0472bf891221f44acd6ac827e7a80c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionName: Ambush Sheep
+  cost: 1
+  target: {fileID: 0}
+  targetTag: 
+  duration: 0
+  preConditions:
+  - key: foundSheep
+    value: 1
+  afterEffects:
+  - key: ambushedSheep
+    value: 1
+  agent: {fileID: 0}
+  running: 0
+--- !u!114 &5885562165021137090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3728562720442375913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7439aefad5bfa724b9dd5a87bdac1e47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionName: Action
+  cost: 1
+  target: {fileID: 0}
+  targetTag: 
+  duration: 0
+  preConditions:
+  - key: ambushedSheep
+    value: 1
+  afterEffects:
+  - key: lockSheep
+    value: 0
+  agent: {fileID: 0}
+  running: 0
+--- !u!114 &7456679293592645156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3728562720442375913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd90c5f49d4f8e141809ba0c0ac25db6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   actions: []
   currentAction: {fileID: 0}
   destination: {fileID: 0}
+  pen: {fileID: 0}
+  chaseSubject: {fileID: 0}
 --- !u!136 &8624094498691526323
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -126,6 +274,31 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4944211671870707317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3728562720442375913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbff57cdc0a55c94fa3b995ae1ae7691, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionName: Action
+  cost: 1
+  target: {fileID: 0}
+  targetTag: 
+  duration: 1
+  preConditions:
+  - key: takingSheep
+    value: 1
+  afterEffects:
+  - key: lockSheep
+    value: 1
+  agent: {fileID: 0}
+  running: 0
 --- !u!195 &6619658311154712233
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -224,7 +397,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 266d8d2df7ce13a4ab0d9bacd067d4be,
         type: 3}
       propertyPath: m_Name
-      value: WhatsApp_Image_2024_0_0731160105_walk
+      value: Wolf3D
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -267,103 +440,4 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 266d8d2df7ce13a4ab0d9bacd067d4be,
     type: 3}
   m_PrefabInstance: {fileID: 6603290515086855172}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &9198912662857829297
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1573743863875723453}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: b22db54e3d24fe74093a65be921f3173,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 700
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: b22db54e3d24fe74093a65be921f3173,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 700
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: b22db54e3d24fe74093a65be921f3173,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 700
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: b22db54e3d24fe74093a65be921f3173,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: b22db54e3d24fe74093a65be921f3173,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.2
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: b22db54e3d24fe74093a65be921f3173,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: b22db54e3d24fe74093a65be921f3173,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: b22db54e3d24fe74093a65be921f3173,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: b22db54e3d24fe74093a65be921f3173,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: b22db54e3d24fe74093a65be921f3173,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: b22db54e3d24fe74093a65be921f3173,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: b22db54e3d24fe74093a65be921f3173,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: b22db54e3d24fe74093a65be921f3173,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -7511558181221131132, guid: b22db54e3d24fe74093a65be921f3173,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -7511558181221131132, guid: b22db54e3d24fe74093a65be921f3173,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 0084ab9004979714bb0fe3a5ce664230, type: 2}
-    - target: {fileID: 919132149155446097, guid: b22db54e3d24fe74093a65be921f3173,
-        type: 3}
-      propertyPath: m_Name
-      value: Wolf3D
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: b22db54e3d24fe74093a65be921f3173, type: 3}
---- !u!4 &8656942306496523354 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b22db54e3d24fe74093a65be921f3173,
-    type: 3}
-  m_PrefabInstance: {fileID: 9198912662857829297}
   m_PrefabAsset: {fileID: 0}

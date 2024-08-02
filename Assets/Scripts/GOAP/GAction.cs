@@ -91,6 +91,10 @@ public abstract class GAction : MonoBehaviour {
         return true;
     }
 
+    public void Timeout() {
+        running = false;
+    }
+
     public abstract bool PrePerform();
     public abstract bool PostPerform();
 }

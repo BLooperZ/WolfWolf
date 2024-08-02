@@ -12,6 +12,10 @@ public class EatGrass : GAction {
         return true;
     }
 
+    private void ShowGrass() {
+        target.SetActive(true);
+    }
+
     public override bool PostPerform() {
         // Add a new state "TreatingPatient"
         beliefs.RemoveState("isHungry");
@@ -20,7 +24,8 @@ public class EatGrass : GAction {
 
 
         inventory.RemoveItem(target);
-        Destroy(target);
+        target.SetActive(false);
+        Invoke("ShowGrass", 10.0f);
         // Hide grass until grown again
         // // Give back the cubicle
         // GWorld.Instance.AddCubicle(target);

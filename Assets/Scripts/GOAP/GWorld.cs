@@ -8,7 +8,9 @@ public sealed class GWorld {
     // Our world states
     private static WorldStates world;
     // Queue of grass
-    private static Queue<GameObject> grass;
+    private static HashSet<GameObject> grass;
+
+    private static HashSet<GameObject> crates;
     // // Queue of cubicles
     // private static Queue<GameObject> cubicles;
 
@@ -17,12 +19,13 @@ public sealed class GWorld {
         // Create our world
         world = new WorldStates();
 
-        grass = new Queue<GameObject>();
+        grass = new HashSet<GameObject>();
+        crates = new HashSet<GameObject>();
 
         GameObject[] gos = GameObject.FindGameObjectsWithTag("Grass");
         foreach (GameObject go in gos) {
 
-            grass.Enqueue(go);
+            grass.Add(go);
         }
         // // Create patients array
         // patients = new Queue<GameObject>();
@@ -50,14 +53,38 @@ public sealed class GWorld {
     }
 
     public void AddGrass(GameObject go) {
-        grass.Enqueue(go);
+        grass.Add(go);
     }
 
-    public GameObject RemoveGrass() {
-        if (grass.Count == 0) return null;
-        return grass.Dequeue();
+    public void RemoveGrass(GameObject go) {
+        grass.Remove(go);
     }
 
+    public GameObject GetGrassWithin(float radius, Vector3 pos) {
+        GameObject closest = null;
+        float distance = Mathf.Infinity;
+        foreach (GameObject go in grass) {
+            float d = Vector3.Distance(go.transform.position, pos);
+            if (d < distance) {
+                closest = go;
+                distance = d;
+            }
+        }
+        RemoveGrass(closest);
+        return closest;
+    }
+
+    public int GetCrateCount() {
+        return crates.Count;
+    }
+
+    public void AddCrate(GameObject go) {
+        crates.Add(go);
+    }
+
+    public void RemoveCrate(GameObject go) {
+        crates.Remove(go);
+    }
 
     // // Add patient
     // public void AddPatient(GameObject p) {

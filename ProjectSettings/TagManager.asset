@@ -7,6 +7,8 @@ TagManager:
   - Grass
   - Wolf
   - Pond
+  - Sheep
+  - Crate
   layers:
   - Default
   - TransparentFX

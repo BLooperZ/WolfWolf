@@ -133,6 +133,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4589210625233579912}
+  - component: {fileID: 6334728643470658137}
   m_Layer: 0
   m_Name: Pond
   m_TagString: Pond
@@ -149,7 +150,7 @@ Transform:
   m_GameObject: {fileID: 4858392905181949793}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.96, y: -2.6379, z: -4.01}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2.425966, y: 2.425966, z: 2.425966}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -157,6 +158,29 @@ Transform:
   - {fileID: 3585420987792290745}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &6334728643470658137
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4858392905181949793}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 10.370495
+  m_Height: 22.31592
+  m_Direction: 1
+  m_Center: {x: 0.14104356, y: 0, z: 1.4504716}
 --- !u!1 &7627829743631480647
 GameObject:
   m_ObjectHideFlags: 0
