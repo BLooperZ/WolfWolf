@@ -11,6 +11,7 @@ public class Wolf : GAgent
     private NavMeshAgent agent;
 
     public GameObject chaseSubject;
+    public GameObject indicator;
 
     // Start is called before the first frame update
     protected override void Start()

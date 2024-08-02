@@ -48,23 +48,6 @@ public class Roam : GAction {
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, 10f);
         foreach (var hitCollider in hitColliders) {
             Debug.Log("Collider: " + hitCollider.gameObject.tag);
-            // if (hitCollider.gameObject.tag == "Grass") {
-            //     // check if item already in inventory
-            //     if (beliefs.HasState("foundGrass") && inventory.HasItem(hitCollider.gameObject)) {
-            //         continue;
-            //     }
-            //     inventory.AddItem(hitCollider.gameObject);
-            //     beliefs.ModifyState("foundGrass", 1);
-            //     Debug.Log("Found Grass");
-            // }
-            if (hitCollider.gameObject.tag == "Pond") {
-                if (beliefs.HasState("foundPond") && inventory.HasItem(hitCollider.gameObject)) {
-                    continue;
-                }
-                inventory.AddItem(hitCollider.gameObject);
-                beliefs.ModifyState("foundPond", 1);
-                Debug.Log("Found Pond");
-            }
             if (hitCollider.gameObject.tag == "Wolf") {
                 if (beliefs.HasState("danger") && inventory.HasItem(hitCollider.gameObject)) {
                     continue;
@@ -78,14 +61,6 @@ public class Roam : GAction {
             }
         }
 
-        // Add a new state "TreatingPatient"
-        // beliefs.ModifyState("foundGrass", 1);
-        // Hide grass until grown again
-        // // Give back the cubicle
-        // GWorld.Instance.AddCubicle(target);
-        // // Give the cubicle back to the world
-        // GWorld.Instance.GetWorld().ModifyState("FreeCubicle", 1);
-        // Remove the cubicle from the list
         return true;
     }
 }
