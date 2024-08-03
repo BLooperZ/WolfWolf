@@ -95,6 +95,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pine
       objectReference: {fileID: 0}
+    - target: {fileID: 8073989004939777404, guid: ba3d9d8d6f84a8d4c83db3cfb709bb8a,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 60.591076
+      objectReference: {fileID: 0}
+    - target: {fileID: 8073989004939777404, guid: ba3d9d8d6f84a8d4c83db3cfb709bb8a,
+        type: 3}
+      propertyPath: m_Center.x
+      value: 1.1314893
+      objectReference: {fileID: 0}
+    - target: {fileID: 8073989004939777404, guid: ba3d9d8d6f84a8d4c83db3cfb709bb8a,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 26.661665
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7393fc5bf784848459d0c00a85eb88c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actionName: Action
+  actionName: Open Crate
   cost: 1
   target: {fileID: 0}
   targetTag: 
@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aeae4c3461e33f444b29c815cb374474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actionName: Action
+  actionName: Take Sheep
   cost: 1
   target: {fileID: 0}
   targetTag: 
@@ -222,7 +222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7439aefad5bfa724b9dd5a87bdac1e47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actionName: Action
+  actionName: Chase Sheep
   cost: 1
   target: {fileID: 0}
   targetTag: 
@@ -288,7 +288,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbff57cdc0a55c94fa3b995ae1ae7691, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actionName: Action
+  actionName: Go To Pwn
   cost: 1
   target: {fileID: 0}
   targetTag: 

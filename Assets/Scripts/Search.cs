@@ -20,16 +20,17 @@ public class Search : GAction {
 
     public override bool PrePerform() {
         // Instantiate an empty GameObject
-        GameObject obj = new GameObject();
+        GameObject obj = new GameObject("SearchTarget");
 
         // put it in a random position inside the navigation mesh
-        obj.transform.position = RandomNavmeshLocation(40f);
+        obj.transform.position = RandomNavmeshLocation(20f);
 
         target = obj;
+        ephermal = true;
 
         if (target == null)
             return false;
-        Invoke("Timeout", 10f);
+        Invoke("Timeout", 30f);
         return true;
     }
 
@@ -38,7 +39,6 @@ public class Search : GAction {
 
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, 100f);
         foreach (var hitCollider in hitColliders) {
-            Debug.Log("Collider: " + hitCollider.gameObject.tag);
             if (hitCollider.gameObject.tag == "Sheep") {
                 if (beliefs.HasState("foundSheep") && inventory.HasItem(hitCollider.gameObject)) {
                     continue;

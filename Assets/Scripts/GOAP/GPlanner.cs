@@ -107,11 +107,11 @@ public class GPlanner {
             queue.Enqueue(a);
         }
 
-        Debug.Log("The Plan is: ");
-        foreach (GAction a in queue) {
+        // Debug.Log("The Plan is: ");
+        // foreach (GAction a in queue) {
 
-            Debug.Log("Q: " + a.actionName);
-        }
+        //     Debug.Log("Q: " + a.actionName);
+        // }
 
         return queue;
     }

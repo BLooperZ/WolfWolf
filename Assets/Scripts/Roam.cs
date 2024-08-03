@@ -20,17 +20,18 @@ public class Roam : GAction {
 
     public override bool PrePerform() {
         // Instantiate an empty GameObject
-        GameObject obj = new GameObject();
+        GameObject obj = new GameObject("RoamTarget");
 
         // put it in a random position inside the navigation mesh
         obj.transform.position = RandomNavmeshLocation(5f);
 
         target = obj;
+        ephermal = true;
 
         if (target == null)
             return false;
 
-        Invoke("Timeout", 10f);
+        Invoke("Timeout", 30f);
         return true;
     }
 
@@ -47,7 +48,6 @@ public class Roam : GAction {
         }
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, 10f);
         foreach (var hitCollider in hitColliders) {
-            Debug.Log("Collider: " + hitCollider.gameObject.tag);
             if (hitCollider.gameObject.tag == "Wolf") {
                 if (beliefs.HasState("danger") && inventory.HasItem(hitCollider.gameObject)) {
                     continue;

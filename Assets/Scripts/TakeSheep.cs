@@ -18,11 +18,12 @@ public class TakeSheep : GAction {
         this.GetComponent<Wolf>().chaseSubject = sheep;
         inventory.RemoveItem(sheep);
 
-        GameObject obj = new GameObject();
+        GameObject obj = new GameObject("TakeSheepTarget");
 
         obj.transform.position = sheep.transform.position;
 
         target = obj;
+        ephermal = true;
 
         Invoke("Timeout", 10f);
         return true;

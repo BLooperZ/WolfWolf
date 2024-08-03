@@ -8,7 +8,7 @@ public class GoToPen : GAction
     {
         target = this.GetComponent<Wolf>().pen;
 
-        Invoke("Timeout", 10f);
+        Invoke("Timeout", 30f);
         return true;
     }
 

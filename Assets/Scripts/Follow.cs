@@ -9,6 +9,7 @@ public class Follow : GAction {
             Debug.Log("No captor found");
             return false;
         }
+        Invoke("Timeout", 30f);
         return true;
     }
 

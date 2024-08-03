@@ -126,7 +126,7 @@ public class GAgent : MonoBehaviour {
             // Remove the top action of the queue and put it in currentAction
             currentAction = actionQueue.Dequeue();
 
-            if (currentAction.PrePerform()) {
+            if (currentAction.IsAchievable() && currentAction.PrePerform()) {
 
                 // Get our current object
                 if (currentAction.target == null && currentAction.targetTag != "") {

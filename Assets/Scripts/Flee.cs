@@ -44,8 +44,24 @@ public class Flee : GAction {
 
         inventory.RemoveItem(wolf);
 
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, 10f);
+        foreach (var hitCollider in hitColliders) {
+            if (hitCollider.gameObject.tag == "Wolf") {
+                if (beliefs.HasState("danger") && inventory.HasItem(hitCollider.gameObject)) {
+                    continue;
+                }
+                inventory.AddItem(hitCollider.gameObject);
+                beliefs.ModifyState("danger", 1);
+                beliefs.RemoveState("foundGrass");
+                beliefs.RemoveState("foundPond");
+                beliefs.RemoveState("safe");
+                Debug.Log("Found Wolf");
+            }
+        }
+
         // Instantiate an empty GameObject
-        GameObject obj = new GameObject();
+        GameObject obj = new GameObject("FleeTarget");
+        ephermal = true;
 
         obj.transform.position = AwayFromWolf(wolf.transform.position, this.transform.position, 30f);
 
@@ -53,6 +69,7 @@ public class Flee : GAction {
 
         if (target == null)
             return false;
+        Invoke("Timeout", 10f);
         return true;
     }
 
@@ -64,7 +81,6 @@ public class Flee : GAction {
         // check for nearby Grass or Pond
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, 30f);
         foreach (var hitCollider in hitColliders) {
-            Debug.Log("Collider: " + hitCollider.gameObject.tag);
             if (hitCollider.gameObject.tag == "Wolf") {
                 if (beliefs.HasState("danger") && inventory.HasItem(hitCollider.gameObject)) {
                     continue;

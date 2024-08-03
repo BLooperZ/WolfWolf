@@ -32,6 +32,8 @@ public abstract class GAction : MonoBehaviour {
     // Are we currently performing an action?
     public bool running = false;
 
+    protected bool ephermal = false;
+
     // Constructor
     public GAction() {
 
@@ -92,7 +94,10 @@ public abstract class GAction : MonoBehaviour {
     }
 
     public void Timeout() {
+        Debug.Log("Timeout for action " + actionName);
         running = false;
+        if (ephermal)
+            Destroy(this.target);
     }
 
     public abstract bool PrePerform();

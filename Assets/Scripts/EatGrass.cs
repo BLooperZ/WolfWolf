@@ -9,11 +9,13 @@ public class EatGrass : GAction {
             Debug.Log("No grass found");
             return false;
         }
+        Invoke("Timeout", 10f);
         return true;
     }
 
     private void ShowGrass() {
         target.SetActive(true);
+        GWorld.Instance.AddGrass(target);
     }
 
     public override bool PostPerform() {
