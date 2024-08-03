@@ -64,35 +64,6 @@ public class AmbushSheep : GAction {
     public override bool PostPerform() {
         Destroy(target);
         beliefs.ModifyState("ambushedSheep", 1);
-
-        // beliefs.RemoveState("danger");
-        // beliefs.ModifyState("safe", 1);
-
-        // // check for nearby Grass or Pond
-        // Collider[] hitColliders = Physics.OverlapSphere(transform.position, 30f);
-        // foreach (var hitCollider in hitColliders) {
-        //     Debug.Log("Collider: " + hitCollider.gameObject.tag);
-        //     if (hitCollider.gameObject.tag == "Wolf") {
-        //         if (beliefs.HasState("danger") && inventory.HasItem(hitCollider.gameObject)) {
-        //             continue;
-        //         }
-        //         inventory.AddItem(hitCollider.gameObject);
-        //         beliefs.ModifyState("danger", 1);
-        //         beliefs.RemoveState("foundGrass");
-        //         beliefs.RemoveState("foundPond");
-        //         beliefs.RemoveState("safe");
-        //         Debug.Log("Found Wolf");
-        //     }
-        // }
-
-        // Add a new state "TreatingPatient"
-        // beliefs.ModifyState("foundGrass", 1);
-        // Hide grass until grown again
-        // // Give back the cubicle
-        // GWorld.Instance.AddCubicle(target);
-        // // Give the cubicle back to the world
-        // GWorld.Instance.GetWorld().ModifyState("FreeCubicle", 1);
-        // Remove the cubicle from the list
         return true;
     }
 }

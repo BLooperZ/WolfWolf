@@ -13,7 +13,6 @@ public class Follow : GAction {
     }
 
     public override bool PostPerform() {
-        // Add a new state "TreatingPatient"
         return true;
     }
 }

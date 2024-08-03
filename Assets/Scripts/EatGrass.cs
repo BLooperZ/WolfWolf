@@ -17,7 +17,6 @@ public class EatGrass : GAction {
     }
 
     public override bool PostPerform() {
-        // Add a new state "TreatingPatient"
         beliefs.RemoveState("isHungry");
         beliefs.ModifyState("foundGrass", -1);
         beliefs.ModifyState("eatenGrass", 1);
@@ -26,12 +25,6 @@ public class EatGrass : GAction {
         inventory.RemoveItem(target);
         target.SetActive(false);
         Invoke("ShowGrass", 10.0f);
-        // Hide grass until grown again
-        // // Give back the cubicle
-        // GWorld.Instance.AddCubicle(target);
-        // // Give the cubicle back to the world
-        // GWorld.Instance.GetWorld().ModifyState("FreeCubicle", 1);
-        // Remove the cubicle from the list
         this.GetComponent<GAgent>().Invoke("GetHungry", 10.0f);
         return true;
     }
